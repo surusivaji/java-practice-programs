@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class GroupAnagrams {
 	
-	public List<List<String>> groupOfAnagrams(String[] strs) {
+	public static List<List<String>> groupOfAnagrams(String[] strs) {
 		Map<String, List<String>> map = new LinkedHashMap<>();
 		for (String str : strs) {
 			char[] chars = str.toCharArray();
