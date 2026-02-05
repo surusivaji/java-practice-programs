@@ -20,6 +20,31 @@ public class FrequencyOfEachCharacter {
 		}
 	}
 	
+	public static void occuranceOfEachCharacter(String str) {
+		int[] occurance = new int[str.length()];
+		int visited = -1;
+		for (int i=0; i<str.length(); i++) {
+			int count = 1;
+			char ch1 = str.charAt(i);
+			for (int j=i+1; j<str.length(); j++) {
+				char ch2 = str.charAt(j);
+				if (ch1==ch2) {
+					count++;
+					occurance[j] = visited;
+				}
+			}
+			if (occurance[i]!=visited) {
+				occurance[i] = count;
+			}
+		}
+		
+		for (int i=0; i<str.length(); i++) {
+			if (occurance[i]!=visited) {
+				System.out.println(str.charAt(i)+" ->"+occurance[i]);
+			}
+		}
+	}
+	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("Enter the String: ");
