@@ -15,15 +15,15 @@ public class Multipulication {
 		if (matrix1.length!=matrix2[0].length) {
 			return null;
 		}
-		int[][] product = new int[matrix1.length][matrix2[0].length];
+		int[][] mul = new int[matrix1.length][matrix2[0].length];
 		for (int i=0; i<matrix1.length; i++) {
 			for (int j=0; j<matrix2[0].length; j++) {
 				for (int k=0; k<matrix2.length; k++) {
-					product[i][j] += matrix1[i][k] * matrix2[k][j];
+					mul[i][j] = mul[i][j] + matrix1[i][k] * matrix2[k][j];
 				}
 			}
 		}
-		return product;
+		return mul;
 	}
 	
 	public static void main(String[] args) {

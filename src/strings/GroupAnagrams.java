@@ -2,18 +2,18 @@ package strings;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class GroupAnagrams {
 	
 	public static List<List<String>> groupOfAnagrams(String[] strs) {
-		Map<String, List<String>> map = new LinkedHashMap<String, List<String>>();
+		Map<String, List<String>> map = new HashMap<>();
 		for (String str : strs) {
 			char[] chars = str.toCharArray();
 			Arrays.sort(chars);
-			String key = String.valueOf(chars);
+			String key = new String(chars);
 			if (!map.containsKey(key)) {
 				map.put(key, new ArrayList<>());
 			}
